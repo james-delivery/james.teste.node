@@ -141,9 +141,9 @@
                   },
                   body: JSON.stringify({
                       target_id: data['compensation_recipient_id'],
-                      source_id: process.env.MAIN_ACCOUNT,
+                      source_id: ENV['MAIN_ACCOUNT'],
                       amount: data['compensation_amount'],
-                      api_key: process.env.PAGARME_KEY,
+                      api_key: ENV['PAGARME_KEY'],
                       metadata: {
                           order_id: data['order_id'],
                           compensation_id: data['compensation_id'],
