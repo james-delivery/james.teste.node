@@ -8,7 +8,9 @@
 
 ## Contexto
 
-O código do arquivo test.js é responsável por fazer pagamentos que foram programados para uma data específica. Esses pagamentos que devem ser realizados estão armazenados na tabela compensations no formato id | recipient_id | amount | expected_payment_date | payment_date | status| created_at | updated_at.
+O código do arquivo test.js é responsável por fazer pagamentos que foram programados para uma data específica. 
+Ele roda numa função serverless que é executada a cada minuto. 
+Esses pagamentos que devem ser realizados estão armazenados na tabela compensations no formato id | recipient_id | amount | expected_payment_date | payment_date | status| created_at | updated_at.
 Cada campo da tabela compensations:
 * id - identificador único da compensation;
 * recipient_id - código de identificação do recebedor junto ao Gateway, que no caso desse teste é o Pagar.me;
@@ -17,6 +19,7 @@ Cada campo da tabela compensations:
 * payment_date - data em que o pagamento foi de fato realizado;
 * status - pode variar entre "waiting_payment" e "paid";
 Após a compensação ser paga, o serviço atualiza os campos status e payment_date e posteriormente insere uma nova linha na tabela transfers, conforme é possível observar no código;
+Importante: o gateway de pagamento usado limita o request de transferência para que sejam realizadas no máximo 70 requisições por minuto (ratelimit).
 
 ## Desafio
 
@@ -31,7 +34,7 @@ Para que seja possível identificarmos quais pontos você levou em consideraçã
 
 ## Como entregar?
 
-Ao finalizar o teste, reveja o código e crie um Pull Request para este repositório.
+Ao finalizar o teste, reveja o código, crie um Pull Request para este repositório e avise a pessoa que te encaminhou o teste.
 
 ## Dúvidas?
 
