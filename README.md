@@ -5,8 +5,6 @@
  - O teste deve ser entregue em no máximo 1 semana e deve seguir a stack: Typescript ou ES6 e Node.js 10.x ou maior.
  - O tempo estimado para realização do teste de forma tranquila são 3 horas.
  - Pode utilizar qualquer framework que julgar interessante.
- - Testes são obrigatórios.
- - Documentação é obrigatória.
 
 ## Contexto
 
@@ -22,7 +20,7 @@ Após a compensação ser paga, o serviço atualiza os campos status e payment_d
 
 ## Desafio
 
-Reescrever (ou não, caso não julgue necessário) o código do arquivo test.js. 
+Refatorar (ou não, caso não julgue necessário) o código do arquivo test.js. 
 Escrever os testes que julgar necessário. 
 Por se tratar de um serviço de pagamento, garantir que esse serviço seja o mais confiável possível. 
 Para que seja possível identificarmos quais pontos você levou em consideração ao reescrever o código, faça os comentários no PR ou no próprio código.
