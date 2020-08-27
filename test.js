@@ -107,7 +107,7 @@
               ]);
               if (terStatus == "paid" && !hasError) {
                   const insertQuery = `
-                    INSERT INTO pagarme_transfers 
+                    INSERT INTO transfers 
                       (created_at, updated_at, amount, pagarme_transfer_id, reference_id, source_id, target_id, status, 
                        funding_date, funding_estimated_date, date_created, date_updated, reference_type) 
                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`;
