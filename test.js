@@ -59,8 +59,6 @@
               }
               todayEnd = todayEnd.toISOString();
               todayInit = todayInit.toISOString();
-              console.log("INIT: ", todayInit);
-              console.log("END: ", todayEnd);
               const res = yield client.query(`
                 SELECT DISTINCT ON (c.id)
                   c.order_id AS order_id,
