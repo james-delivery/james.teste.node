@@ -18,8 +18,9 @@ Cada campo da tabela compensations:
 * expected_payment_date - data em que o pagamento deve ser realizada; 
 * payment_date - data em que o pagamento foi de fato realizado;
 * status - pode variar entre "waiting_payment" e "paid";
-Após a compensação ser paga, o serviço atualiza os campos status e payment_date e posteriormente insere uma nova linha na tabela transfers, conforme é possível observar no código;
-Importante: o gateway de pagamento usado limita o request de transferência para que sejam realizadas no máximo 70 requisições por minuto (ratelimit).
+
+- Após a compensação ser paga, o serviço atualiza os campos status e payment_date e posteriormente insere uma nova linha na tabela transfers, conforme é possível observar no código;
+- Importante: o gateway de pagamento usado limita o request de transferência para que sejam realizadas no máximo 70 requisições por minuto (ratelimit).
 
 ## Desafio
 
