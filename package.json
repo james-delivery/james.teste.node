@@ -1,0 +1,41 @@
+{
+  "name": "typescript-transactions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts",
+    "migrate": "node-pg-migrate",
+    "migrate:up": "node-pg-migrate up",
+    "test:functional": "jest --projects ./test --runInBand",
+    "seed:compensations": "ts-node migrations/seeds/fakerCompensations.ts"
+  },
+  "keywords": [],
+  "author": "André Pinto <andrevpde90@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.61",
+    "@types/config": "^0.0.36",
+    "@types/node": "^8.0.29",
+    "axios-debug": "^0.0.4",
+    "serverless-offline": "^6.7.0",
+    "serverless-plugin-optimize": "^4.1.4-rc.1",
+    "serverless-plugin-typescript": "^1.1.9",
+    "ts-node": "3.3.0",
+    "ts-node-dev": "^1.0.0-pre.61",
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {
+    "@types/faker": "^4.1.12",
+    "@types/jest": "^26.0.13",
+    "axios": "^0.20.0",
+    "config": "^3.3.1",
+    "faker": "^5.1.0",
+    "moment": "^2.27.0",
+    "node-pg-migrate": "^5.6.0",
+    "pg": "^8.3.3",
+    "reflect-metadata": "^0.1.10",
+    "ts-jest": "^26.3.0"
+  }
+}

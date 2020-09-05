@@ -1,0 +1,18 @@
+service:
+  name: typescript-transactions
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-plugin-optimize
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  process:
+    handler: src/handler.process
+    events:
+      - schedule:
+          rate: rate(1 minute)
