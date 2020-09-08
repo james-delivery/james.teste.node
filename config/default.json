@@ -1,0 +1,11 @@
+{
+  "App": {
+    "database": {
+      "postgres": "localhost:3333"
+    },
+    "PagarMe": {
+      "url": "https://api.pagar.me:443/1",
+      "api_key": "ak_test_JVuVm6Bft337ORstC4TPPHv3kk10zA"
+    }
+  }
+}

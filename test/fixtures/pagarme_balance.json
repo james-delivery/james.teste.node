@@ -1,0 +1,6 @@
+{
+  "object": "balance",
+  "waiting_funds": { "amount": 79800 },
+  "transferred": { "amount": 0 },
+  "available": { "amount": 0 }
+}
