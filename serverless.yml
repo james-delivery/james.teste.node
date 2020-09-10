@@ -1,0 +1,20 @@
+service: james-teste
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  transfersHandler:
+    handler: src/handler.transfersHandler
+    events:
+    - schedule:
+        name: transactions
+        description: 'pagar.me check scheduled dayly transfers'
+        rate: rate(1 minute)
+
+
