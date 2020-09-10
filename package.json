@@ -1,0 +1,42 @@
+{
+  "name": "james.teste.node",
+  "version": "1.0.0",
+  "description": "## Regras",
+  "main": "test.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "start": "ts-node src/handler.ts",
+    "migration:run": "./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js migration:run",
+    "migration:create": "./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js migration:create -n",
+    "migration:revert": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:revert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/james-delivery/james.teste.node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/james-delivery/james.teste.node/issues"
+  },
+  "homepage": "https://github.com/james-delivery/james.teste.node#readme",
+  "dependencies": {
+    "@types/jest": "^26.0.13",
+    "@types/pg": "^7.14.4",
+    "mysql": "^2.14.1",
+    "node-fetch": "^2.6.0",
+    "pg": "^8.3.3",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "0.2.25"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.29",
+    "@types/node-fetch": "^2.5.7",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
+    "ts-node": "3.3.0",
+    "typescript": "^3.7.5",
+    "undefined": "^0.1.0"
+  }
+}
