@@ -1,7 +1,5 @@
 # Lambda function to process pagarme transactions
 
-
-
 ## Stack:
 
 - Node.js v10+

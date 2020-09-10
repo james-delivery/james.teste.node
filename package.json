@@ -7,12 +7,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "node-fetch": "^2.6.1",
+    "pg": "^8.3.3",
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.17",
     "@types/jest": "^24.0.15",
     "@types/node": "^10.12.18",
+    "@types/node-fetch": "^2.5.7",
+    "@types/pg": "^7.14.4",
     "jest": "^24.8.0",
     "serverless-offline": "^5.5.0",
     "serverless-webpack": "^5.2.0",
@@ -20,8 +24,8 @@
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4",
     "webpack": "^4.29.0",
-    "webpack-sources": "1.0.1",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "webpack-sources": "1.0.1"
   },
   "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
   "license": "MIT"
