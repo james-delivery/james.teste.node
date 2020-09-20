@@ -1,6 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
   const Compensation = sequelize.define('Compensation', {
-    id: DataTypes.INTEGER,
     order_id: DataTypes.INTEGER,
     amount: DataTypes.INTEGER,
     status: DataTypes.STRING,
