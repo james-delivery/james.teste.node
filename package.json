@@ -1,0 +1,16 @@
+{
+  "name": "james.teste.node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/james-delivery/james.teste.node.git",
+  "author": "Adriano Terruel <adrianopons@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "pg": "^8.3.3",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+}
