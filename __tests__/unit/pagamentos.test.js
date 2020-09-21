@@ -10,20 +10,17 @@ describe('Creating a compensation', () => {
       expected_payment_date: '2020-09-25',
       pagarme_recipient_id: '1'
     });
-
-    console.log(compensation);
-
-    expect(1).toBe(1);
+    let idRetrieved = await compensation.id;
+    
+    expect(idRetrieved).toBeGreaterThan(0);
   });
 
   it('should validate input data to update a compensation', () => {
-    const now = '';
-    const compensationId = '';
-    const terStatus = '';
+    //regras para validação dos campos da tabela compensation
   });
 
   it('should validade input data to create a transfer', () => {
-    
+    //regras para validação dos campos da tabela transfer
   });
 
 })

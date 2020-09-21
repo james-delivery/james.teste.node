@@ -19,6 +19,6 @@
   "scripts": {
     "pretest": "SET NODE_ENV=test && sequelize db:migrate",
     "test": "SET NODE_ENV=test && jest",
-    "posttest": "SET NODE_ENV=test && sequelize db:undo:all"
+    "posttest": "SET NODE_ENV=test && sequelize db:migrate:undo:all"
   }
 }
