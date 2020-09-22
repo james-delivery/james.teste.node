@@ -17,6 +17,7 @@ export default class PagarmeService {
         });
     }
 
+    // afterTransfer: atualiza os registros no banco de dados
     async afterTransfer(transfer: Transfer, errors?: any){
         let terStatus = "paid";
         let hasError = false;
@@ -39,6 +40,8 @@ export default class PagarmeService {
         }
     }
     
+    // postCompensations: envia as compensações para a API da Pagarme e atualiza
+    // os registro no banco de dados.
     async postCompensations(compensations?: Compensation[]){
         const endpoint = this.getEndpoint()
         

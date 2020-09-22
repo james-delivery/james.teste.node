@@ -28,9 +28,8 @@ describe('PagarmeService', () => {
         PagarmeService.prototype.afterTransfer = mockAfterTransfer
         const mock = new PagarmeService()
         await mock.postCompensations(listOfCOmpensations)
-        PagarmeService.prototype.afterTransfer = realAfterTransfer
         expect(mockAfterTransfer).toBeCalledTimes(3)
-        
+        PagarmeService.prototype.afterTransfer = realAfterTransfer
     })
     it('should proccess a list of compensations and got an error', async (done) => {
         const mock = new PagarmeService()
