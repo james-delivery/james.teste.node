@@ -21,8 +21,8 @@ export default class PagarmeService {
         let terStatus = "paid";
         let hasError = false;
 
-        if (errors) {
-            console.error("TER Error: ", errors);
+        if (errors && errors.length > 0) {
+            console.log("TER Error: ", errors);
             terStatus = "non-identified-error"
             if (this.getIdempotencykeyError(errors).length > 0) {
                 terStatus = "paid";

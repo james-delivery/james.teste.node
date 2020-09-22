@@ -29,7 +29,7 @@ export default class TransferModel extends DBConnection {
             now,
             transfer.amount,
             transfer.id,
-            transfer.metadata.orderId,
+            transfer.metadata?.orderId,
             transfer.sourceId,
             transfer.targetId,
             transfer.status,
