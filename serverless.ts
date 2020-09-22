@@ -28,11 +28,11 @@ const serverlessConfiguration: Serverless = {
   },
   functions: {
     pagarme: {
-      handler: 'handler.pagarme',
+      handler: './src/pagarme/handler.post',
       events: [
         {
           http: {
-            method: 'get',
+            method: 'post',
             path: 'pagarme',
           }
         }
