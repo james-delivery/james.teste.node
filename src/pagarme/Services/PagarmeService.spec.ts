@@ -41,11 +41,13 @@ describe('PagarmeService', () => {
         done();
     })
     it('should proccess after transfer compensations', async () => {
+        const realUpdate = CompensationModel.prototype.update
         const mockUpdate = jest.fn()
         CompensationModel.prototype.update = mockUpdate
         const mock = new PagarmeService()
         await mock.afterTransfer(new MockTransfer(), [])
         expect(mockUpdate).toBeCalledTimes(1)
+        CompensationModel.prototype.update = realUpdate
     })
     it('should proccess after transfer compensations with errors', async () => {
         const errors = [
@@ -55,6 +57,7 @@ describe('PagarmeService', () => {
         ]
         
         const mockUpdate = jest.fn()
+        const realUpdate = CompensationModel.prototype.update
         CompensationModel.prototype.update = mockUpdate
         
         const realGetIdempotencykeyError = PagarmeService.prototype.getIdempotencykeyError
@@ -68,6 +71,7 @@ describe('PagarmeService', () => {
         expect(mockUpdate).toBeCalledTimes(1)
         expect(mockGetIdempotencykeyError).toHaveBeenCalled()
         
+        CompensationModel.prototype.update = realUpdate
         PagarmeService.prototype.getIdempotencykeyError = realGetIdempotencykeyError
     })
     it('should be assible to get the final API endpoint', () => {
