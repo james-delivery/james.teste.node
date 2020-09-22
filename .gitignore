@@ -1,4 +1,12 @@
+# package directories
 node_modules
-build
-dist
-*.swp
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Webpack directories
+.webpack
+
+# VS Code
+.vscode
