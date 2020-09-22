@@ -1,10 +1,10 @@
 import TransferInterface from './Interfaces/TransferInterface';
-import MetadataInterface from './Interfaces/MetadataInterface';
+import Metadata from './Metadata';
 
 export default class Transfer implements TransferInterface {
     amount: String;
     id: String;
-    metadata: MetadataInterface;
+    metadata: Metadata;
     sourceId: String;
     targetId: String;
     status: String;
@@ -14,10 +14,9 @@ export default class Transfer implements TransferInterface {
     dateUpdated: any;
     compensationId: String;
 
-    constructor(data, compensationId) {
+    constructor(data: any, compensationId: any) {
         this.amount = data['amount'];
         this.id = data['id'];
-        this.metadata.orderId = data['metadata']['order_id'];
         this.sourceId = data['source_id'];
         this.targetId = data['target_id'];
         this.status = data['status'];
@@ -26,6 +25,8 @@ export default class Transfer implements TransferInterface {
         this.dateCreated = data['date_created'];
         this.dateUpdated = data['date_updated'];
         this.compensationId = compensationId
+        this.metadata = new Metadata()
+        this.metadata.orderId = data['metadata']['order_id'];
     }
 
 }

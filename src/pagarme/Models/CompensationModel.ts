@@ -6,18 +6,18 @@ export default class CompensationModel extends DBConnection{
 
     constructor() {
         super()
-        this._client = this.getClient()
+        this._client = this.connect()
     }
     
-    getClient(){
+    async getClient(){
         return this._client;
     }
 
     async getAll(){
-        const client = this.getClient();
+        const client = await this.getClient();
 
         const todayEndDt = new Date(new Date().setHours(23, 59, 59));
-        
+
         if (todayEndDt.getDay() == 2) {
             todayEndDt.setDate(todayEndDt.getDate() + 1);
         }
@@ -51,7 +51,7 @@ export default class CompensationModel extends DBConnection{
     }
 
     async update(compensationId, terStatus){
-        const client = this.getClient();
+        const client = await this.getClient();
 
         const now = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
         

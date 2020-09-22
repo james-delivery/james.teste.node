@@ -82,14 +82,14 @@ export default class PagarmeService {
                     const error = new Error(`TER unexpected Error: ${errorStr}`);
                     throw(error);
                 }
-                
+
                 const transfer = new Transfer(result, compensationId)
-                
+
                 await this.afterTransfer(transfer, result.errors);
             } catch (error) {
                 const dataStr = JSON.stringify(body, null, 2)
                 const errorStr = JSON.stringify(error, null, 2)
-                console.error(`
+                throw(`
     PagarMe Transfer Error - DATA: ${dataStr} - ERROR: ${errorStr}
                 `);
             }

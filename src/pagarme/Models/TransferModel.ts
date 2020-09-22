@@ -1,20 +1,20 @@
 import DBConnection from './DbConnection';
-import Transfer from '../Entities/Transfer';;
+import Transfer from '../Entities/Transfer';
 
-export default class CompensationModel extends DBConnection{
+export default class TransferModel extends DBConnection {
     private _client;
 
     constructor() {
         super()
-        this._client = this.getClient()
+        this._client = this.connect()
     }
     
-    getClient(){
+    async getClient(){
         return this._client;
     }
 
     async create(transfer: Transfer){
-        const client = this.getClient();
+        const client = await this.getClient();
 
         const now = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
 

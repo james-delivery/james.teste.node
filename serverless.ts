@@ -28,6 +28,11 @@ const serverlessConfiguration: Serverless = {
   },
   functions: {
     pagarme: {
+      package: {
+        include: [
+          './src/pagarme/**'
+        ]
+      },
       handler: './src/pagarme/handler.post',
       events: [
         {
