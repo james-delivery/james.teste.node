@@ -1,4 +1,4 @@
-import Compensation from "../Entities/Compensation"
+import Compensation from '../Entities/Compensation'
 
 const compensationData = {
     'compensation_id': jest.fn(),
@@ -13,4 +13,4 @@ const data = [
     new Compensation(compensationData)
 ]
 
-export default data;
+export default data

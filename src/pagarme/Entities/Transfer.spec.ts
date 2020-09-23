@@ -1,4 +1,4 @@
-import Transfer from './Transfer';
+import Transfer from './Transfer'
 
 const mockDefine = () => {
     new Transfer(undefined, undefined)

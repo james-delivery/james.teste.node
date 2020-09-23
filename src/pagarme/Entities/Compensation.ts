@@ -7,9 +7,9 @@ export default class Compensation implements CompensationInterface {
     compensationOrderId: String;
     
     constructor(data?: Object){
-        this.compensationId = data['compensation_id'];
-        this.compensationRecipientId = data['compensation_recipient_id'];
+        this.compensationId = data['compensation_id']
+        this.compensationRecipientId = data['compensation_recipient_id']
         this.compensationAmount = data['compensation_amount']
-        this.compensationOrderId
+        this.compensationOrderId = data['order_id']
     }
 }

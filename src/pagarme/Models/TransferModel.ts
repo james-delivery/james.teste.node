@@ -1,5 +1,5 @@
-import DBConnection from './DbConnection';
-import Transfer from '../Entities/Transfer';
+import DBConnection from './DbConnection'
+import Transfer from '../Entities/Transfer'
 
 export default class TransferModel extends DBConnection {
     private _client;
@@ -10,19 +10,19 @@ export default class TransferModel extends DBConnection {
     }
     
     async getClient(){
-        return this._client;
+        return this._client
     }
 
     async create(transfer: Transfer){
-        const client = await this.getClient();
+        const client = await this.getClient()
 
-        const now = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+        const now = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')
 
         const insertQuery = `
         INSERT INTO transfers 
             (created_at, updated_at, amount, pagarme_transfer_id, reference_id, source_id, target_id, status, 
             funding_date, funding_estimated_date, date_created, date_updated, reference_type) 
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`;
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`
 
         await client.query(insertQuery, [
             now,
@@ -37,9 +37,9 @@ export default class TransferModel extends DBConnection {
             transfer.fundingEstimatedDate,
             transfer.dateCreated,
             transfer.dateUpdated,
-            "Order"
-        ]);
+            'Order'
+        ])
 
-        client.end();
+        client.end()
     }
 }

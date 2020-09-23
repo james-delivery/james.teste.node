@@ -1,5 +1,5 @@
-import { mock } from 'jest-mock-extended';
-import CompensationInterface from './CompensationInterface';
+import { mock } from 'jest-mock-extended'
+import CompensationInterface from './CompensationInterface'
 
 class Mock implements CompensationInterface {
     compensationId: String;
@@ -10,7 +10,7 @@ class Mock implements CompensationInterface {
 
 describe('CompensationInterface', () => {
     it('should interface implemented', () => {
-        const mockCompensationInterface = mock<CompensationInterface>();
+        const mockCompensationInterface = mock<CompensationInterface>()
         expect(mockCompensationInterface).toBeDefined()
     })
     it('should implements the `CompensationInterface` interface', () => {

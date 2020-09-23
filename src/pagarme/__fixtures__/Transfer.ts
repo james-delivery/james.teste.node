@@ -1,4 +1,4 @@
-import Transfer from "../Entities/Transfer"
+import Transfer from '../Entities/Transfer'
 
 const data = {
     amount: jest.fn(),

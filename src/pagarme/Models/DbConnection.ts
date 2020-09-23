@@ -1,4 +1,4 @@
-import pg from "pg";
+import pg from 'pg'
 
 export default class DBConnection {
     private _connection: any
@@ -8,8 +8,8 @@ export default class DBConnection {
     }
 
     async connect() {
-        const client = new pg.Client();
-        return client.connect();
+        const client = new pg.Client()
+        return client.connect()
     }
 
     getClient() {

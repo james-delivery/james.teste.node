@@ -1,4 +1,4 @@
-import DBConnection from './DbConnection';
+import DBConnection from './DbConnection'
 
 describe('DbConnection', () => {
     it('should define a `TransferModel`', () => {

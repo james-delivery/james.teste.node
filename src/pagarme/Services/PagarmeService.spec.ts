@@ -1,7 +1,7 @@
-import PagarmeService from './PagarmeService';
-import listOfCOmpensations from '../__fixtures__/Compensations';
-import MockTransfer from '../__fixtures__/Transfer';
-import CompensationModel from '../Models/CompensationModel';
+import PagarmeService from './PagarmeService'
+import listOfCOmpensations from '../__fixtures__/Compensations'
+import MockTransfer from '../__fixtures__/Transfer'
+import CompensationModel from '../Models/CompensationModel'
 
 jest.mock('../Entities/Transfer')
 
@@ -38,7 +38,7 @@ describe('PagarmeService', () => {
         } catch (error) {
             expect(error).toThrow()
         }
-        done();
+        done()
     })
     it('should proccess after transfer compensations', async () => {
         const realUpdate = CompensationModel.prototype.update

@@ -1,5 +1,5 @@
-import { mock } from 'jest-mock-extended';
-import MetadataInterface from './MetadataInterface';
+import { mock } from 'jest-mock-extended'
+import MetadataInterface from './MetadataInterface'
 
 class Mock implements MetadataInterface {
     orderId: String;
@@ -7,7 +7,7 @@ class Mock implements MetadataInterface {
 
 describe('MetadataInterface', () => {
     it('should interface implemented', () => {
-        const mockMetadataInterface = mock<MetadataInterface>();
+        const mockMetadataInterface = mock<MetadataInterface>()
         expect(mockMetadataInterface).toBeDefined()
     })
     it('should implements the `MetadataInterface` interface', () => {

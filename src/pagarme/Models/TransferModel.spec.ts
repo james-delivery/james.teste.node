@@ -1,5 +1,5 @@
-import TransferModel from './TransferModel';
-import mockTransfer from '../__fixtures__/Transfer';
+import TransferModel from './TransferModel'
+import mockTransfer from '../__fixtures__/Transfer'
 
 describe('TransferModel', () => {
     it('should define a `TransferModel`', () => {

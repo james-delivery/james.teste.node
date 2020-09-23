@@ -1,5 +1,5 @@
-import TransferInterface from './TransferInterface';
-import MetadataInterface from './MetadataInterface';
+import TransferInterface from './TransferInterface'
+import MetadataInterface from './MetadataInterface'
 
 class Mock implements TransferInterface {
     amount: String;

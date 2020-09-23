@@ -1,5 +1,5 @@
-import DBConnection from './DbConnection';
-import Compensation from '../Entities/Compensation';;
+import DBConnection from './DbConnection'
+import Compensation from '../Entities/Compensation'
 
 export default class CompensationModel extends DBConnection{
     private _client;
@@ -10,22 +10,22 @@ export default class CompensationModel extends DBConnection{
     }
     
     async getClient(){
-        return this._client;
+        return this._client
     }
 
     async getAll(){
-        const client = await this.getClient();
+        const client = await this.getClient()
 
-        const todayEndDt = new Date(new Date().setHours(23, 59, 59));
+        const todayEndDt = new Date(new Date().setHours(23, 59, 59))
 
         if (todayEndDt.getDay() == 2) {
-            todayEndDt.setDate(todayEndDt.getDate() + 1);
+            todayEndDt.setDate(todayEndDt.getDate() + 1)
         }
 
-        const todayEnd = todayEndDt.toISOString();
+        const todayEnd = todayEndDt.toISOString()
 
-        const todayInitDt = new Date(new Date().setHours(0, 0, 0));
-        const todayInit = todayInitDt.toISOString();
+        const todayInitDt = new Date(new Date().setHours(0, 0, 0))
+        const todayInit = todayInitDt.toISOString()
 
         const { rows } = await client.query(`
         SELECT DISTINCT ON (c.id)
@@ -41,31 +41,31 @@ export default class CompensationModel extends DBConnection{
                 AND c.expected_payment_date - interval '3 hours' >= $1
                 AND c.expected_payment_date - interval '3 hours' <= $2
         ORDER BY c.id
-        LIMIT 70;`, [todayInit, todayEnd]);
+        LIMIT 70;`, [todayInit, todayEnd])
 
-        await client.end();
+        await client.end()
 
         return rows.map(row => {
             return new Compensation(row)
-        });
+        })
     }
 
     async update(compensationId, terStatus){
-        const client = await this.getClient();
+        const client = await this.getClient()
 
-        const now = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+        const now = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')
         
         const query = `
         update compensations 
         set status = ${terStatus}, payment_date = ${now}, updated_at = ${now} 
         where id = ${compensationId}`
 
-        const { rows } = await client.query(query);
+        const { rows } = await client.query(query)
 
-        await client.end();
+        await client.end()
 
         return rows.map(row => {
             return new Compensation(row)
-        });
+        })
     }
 }

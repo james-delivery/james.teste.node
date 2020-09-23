@@ -1,4 +1,4 @@
-import Compensation from './Compensation';
+import Compensation from './Compensation'
 
 const mockDefine = () => {
     new Compensation()
